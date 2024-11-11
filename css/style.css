@@ -309,6 +309,23 @@ body {
   object-fit: cover;
 }
 
+.carousel-cell img {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .carousel-cell video {
+    display: none;
+  }
+  .carousel-cell img {
+    display: block;
+    transform: scale(0.3);
+  }
+  .about-banner {
+    display: none;
+  }
+}
+
 .carousel-cell video::-webkit-media-controls {
   display: none ;
 }
