@@ -96,7 +96,7 @@ min-height: 100vh;
 display: flex;
 justify-content: space-between;
 align-items: center;
-transition: 0.5s;
+ition: 0.5s;
 z-index: 90;
 background-color: white;
 }
@@ -145,7 +145,6 @@ height: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
-transform: translateY(-15%);
 }
 .active-menu {
   text-decoration: underline;
