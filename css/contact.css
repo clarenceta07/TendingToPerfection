@@ -1,0 +1,588 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Poppins',sans-serif;
+  background-color: #334d2b;
+}
+
+::-webkit-scrollbar { width: 8px; }
+
+::-webkit-scrollbar-track { background-color: transparent; }
+
+::-webkit-scrollbar-thumb { background-color: #fff; }
+
+.sidebar {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  width: 100%;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+}
+
+.bg-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+
+}
+
+.background {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.bg-container video::-webkit-media-controls {
+  display: none !important;
+}
+
+.bg-container video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+.carousel {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10; /* Place the carousel behind other content */
+  
+}
+.menu-page{
+  top:0;
+  left:0;
+  width: 55%;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(30%,1fr));
+  grid-gap: 20px 40px;
+}
+
+.menu-logo {
+  width: 60%;
+}
+.click-image {
+  width: 20%;
+
+}
+nav
+{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+padding-left: 5%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+pointer-events: auto;
+user-select: none;
+}
+
+.showcase
+{
+position: relative;
+right: 0;
+width: 100%;
+min-height: 100vh;
+display: flex;
+justify-content: space-between;
+align-items: center;
+transition: 0.5s;
+z-index: 90;
+background-color: white;
+}
+
+
+
+/* Adjust the showcase position for the parallax effect */
+.showcase.active {
+  right: 10%;
+}
+
+.showcase.active
+{
+right: 300px;
+}
+.toggle
+{
+position: relative;
+z-index: 1000;
+padding-left: 15%;
+width: 100px;
+height: 100px;
+background: url(https://i.ibb.co/HrfVRcx/menu.png);
+background-repeat: no-repeat;
+background-size: 30px;
+background-position: center;
+cursor: pointer;
+}
+.toggle.active
+{
+background: url(https://i.ibb.co/rt3HybH/close.png);
+background-repeat: no-repeat;
+background-size: 25px;
+background-position: center;
+cursor: pointer;
+overflow: hidden;
+}
+
+.menu
+{
+position: absolute;
+top: 0;
+right: 0;
+width: 300px;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+transform: translateY(-15%);
+}
+.active-menu {
+  text-decoration: underline;
+}
+.menu ul
+{
+position: relative;
+}
+.menu ul li
+{
+list-style: none;
+transition: transform 0.2s;
+user-select: none;
+}
+.menu ul li:hover
+{
+list-style: none;
+transform: scale(1.2);
+}
+.menu ul li a
+{
+text-decoration: none;
+font-size: 2rem;
+color: #fff;
+}
+.menu ul li a.active
+{
+text-decoration: underline;
+font-size: 2rem;
+color: #fff;
+}
+
+.underline-effect {
+  display: inline-block;
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration: none; /* Remove the default text underline */
+  position: relative;
+}
+
+.underline-effect::before {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 0;
+  height: 2px; /* Set the desired underline thickness */
+  background-color: #fff; /* Set the desired underline color */
+  transition: width 0.3s; /* Add a transition for smooth growth */
+}
+
+.underline-effect:hover::before {
+  width: 100%; /* Grow the underline to match text length */
+}
+
+.translate {
+  padding-top: 10%;
+}
+
+.translate select {
+  color:#334d2b;
+  background-color: #FFFFFF;
+  width: 10rem;
+  height: 2rem;
+  font-family: Poppins;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.fa-brands fa-x-twitter {
+	color: white;
+}
+
+/* Style for the heading */
+.c-heading h1 {
+  position: relative; /* To position the line relative to the heading */
+}
+
+/* Style for the line under the text */
+.c-heading h1::after {
+  content: ''; /* Empty content for pseudo-element */
+  position: absolute;
+  bottom: -3px; /* Adjust this value to set the distance between text and line */
+  left: 0;
+  width: 100%; /* Makes the line stretch across the container */
+  height: 3px; /* Height of the line */
+  background-color: #fff; /* Color of the line */
+}
+
+
+.container-background {
+  background-color: #334d2b;
+}
+
+
+
+
+
+.raise:hover,
+.raise:focus {
+box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+transform: translateY(-0.25em);
+}
+
+#wrapper{
+  height: 100vh;
+  overflow-y: auto;
+  perspective: 30px;
+}
+
+
+
+
+
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* CSS Document */
+a{
+	text-decoration:none;
+}
+.social a{
+	padding: 20px;
+	color:#fff;
+	font-size:1.1rem;
+}
+#contact{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	display: flex;
+	align-items: center;
+  z-index: 1000;
+}
+.social{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #334d2b;
+	box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+}
+.social a:hover{
+	color:#7da12d;
+	transition: all ease 0.3s;
+}
+.contact-box{
+	background-color:#334d2b;
+	display: flex;	
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem 2rem;
+	box-shadow: 2px 0px 30px rgba(0,0,0,0.1);
+}
+.c-heading h1{
+	font-family: Poppins;
+	color: #fff;
+	font-size: 1.8rem;
+	font-weight: lighter;
+	margin: 0px;
+	padding: 0px;
+}
+.c-heading p{
+	font-family: Poppins;
+	color:#fff;
+	font-size: 1rem;
+	font-weight: lighter;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+.c-inputs{
+	margin: 15px 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+}
+.c-inputs h1{
+	width: 25%;
+	height: 15%;
+	background-color: transparent;
+	border-top: none;
+  	border-right: none;
+  	border-left: none;
+	outline: none;
+	margin: 6% 0px;
+	box-sizing: border-box;
+	color: #fff;
+	display: flex;
+	font-size: 1rem;
+}
+.c-inputs textarea{
+	width: 100% !important;
+	height: 20vh !important;
+	outline: none;
+	background-color: transparent;
+	border: 2px solid white;
+	color: #f4f4f4;
+	padding: 5%;
+  	margin-top: 30px;
+	font-size: 1.1rem;
+	box-sizing: border-box;
+}
+.c-inputs p {
+	margin-top: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+}
+.c-inputs button{
+	width:200px;
+	height: 40px;
+	background-color: #FFFFFF;
+	border: 1px solid black;
+	outline: none;
+	margin-top: 30px;
+  margin-left: 8%;
+	border-radius: 10px;
+	box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+	letter-spacing: 2px;
+  font-family: Poppins;
+}
+.c-inputs input:focus{
+	border-bottom: 1px solid rgba(252,252,252,1.00);
+	transition: all ease 0.5s;
+  background-color: rgba(0,0,0,0.4);
+
+}
+.c-inputs textarea:focus{
+	border: none;
+	border-bottom: 1px solid rgba(255,255,255,1.00);
+	transition: all ease 0.5s;
+	background-color: rgba(0,0,0,0.4);
+}
+.c-inputs input::placeholder {
+  color: white; /* Change this color to your desired color */
+}
+.c-inputs textarea::placeholder {
+	color: white; /* Change this color to your desired color */
+  }
+.c-inputs button:hover{
+	transform: scale(1.02);
+  cursor: pointer;
+}
+.map{
+	border: 7px solid black;
+	
+}
+.g-map {
+	width: 50rem;
+	height: 39.3rem;
+}
+@media(max-width:1100px){
+	.map{
+		display: none;
+	}
+}
+@media(max-width:450px){
+	.social{
+		display: none;
+	}
+	.contact-box{
+		width: 100%;
+		height: 100vh;
+		box-sizing: border-box;
+	}
+	#contact{
+		position: static;
+		transform: translate(0,0);
+		width:100%;
+		height: 100vh;
+		box-sizing: border-box;
+	}
+	.c-heading h1{
+		font-size: 2.2rem;
+		text-align: center;
+	}
+	
+}
+
+/* Footer styles */
+/* Footer styles */
+footer {
+	color: #fff;
+	font-family: Arial, sans-serif;
+	line-height: 1.6; /* Improves readability */
+  }
+  
+  .footer-top, .footer-bottom {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+  }
+  
+  .footer-top {
+	padding-bottom: 20px;
+	background-color: #12182a;
+  }
+  
+  .footer-bottom {
+	padding: 15px;
+	justify-content: center;
+	background-color: #12182a;
+  }
+  
+  .column {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	align-items: center;
+	text-align: center;
+  }
+  
+  .infoWrapper {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .info div, .links a, .time-column div {
+	margin: 5px 0;
+	font-size: 1.05vw; /* This will apply the same font size to the schedule text as well */
+  }
+  
+  /* Center the list with icons in the middle column */
+  .info {
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Centers the content */
+	width: 80%;
+  }
+  
+  .info div {
+	display: flex;
+	align-items: center; /* Aligns icons with text */
+	justify-content: flex-start; /* Aligns the block to the start of the flex container */
+	width: 100%;
+  }
+  
+  .info i {
+	min-width: 20px; /* Ensures icons don't get squished */
+	text-align: center; /* Center the icon */
+	margin-right: 20px; /* Space between icon and text */
+  }
+  
+  .links a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	margin: 5px 0;
+	text-align: left; /* Align text to the left */
+	font-size: 1.5rem;
+  }
+  
+  /* Social Media Icons */
+  .footer-bottom .icon {
+	margin: 0 5px;
+	color: #fff;
+  }
+  
+  /* Adjust the ratios */
+  .footer-top {
+	flex: 3 0 auto;
+  }
+  
+  .footer-bottom {
+	flex: 1 0 auto;
+  }
+  
+  /* Additional styles for logo image */
+  .footerLogo {
+	width: 15vw;
+	height: auto;
+	margin: 0 auto;
+  }
+  
+  /* Additional styles for the information icons */
+  
+  
+  .footerLogoText {
+	width: 20vw;
+  }
+  
+  .time-container {
+	display: flex;
+	align-items: center; /* Aligns the icon with the time schedule */
+	justify-content: center;
+	margin-bottom: 10px;
+  }
+  
+  .time-column{
+	display: flex; 
+	flex-direction: column;
+	align-items: center; /* This will center the text in each column */
+  }
+  
+  .icon{
+	font-size: 2rem;
+	margin-right: 15vw;
+  }
+  
+  
+  /* Responsive adjustments might be necessary if the layout breaks on smaller screens */
+  @media (max-width: 768px) {
+	/* Other responsive styles remain unchanged */
+   
+	.time-container {
+		flex-direction: column;
+		border: none;
+	}
+  
+	.time-column {
+		width: 100%; /* Full width on small screens */
+		padding: 5px 0;
+	}
+  
+	.time-divider {
+		display: none; /* Hide the divider on small screens */
+	}
+  }
+  
+
+
+
+
+
+  

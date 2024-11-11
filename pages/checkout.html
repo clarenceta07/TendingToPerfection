@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../css/checkout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="../js/cart.js" defer></script>
+</head>
+<body>
+
+   <a href="menu.html" class="back-button">&larr; Back to Menu</a>
+
+
+    <div class="checkout-container">
+        
+        <!-- Cart Items (Left Side) -->
+        <div class="cart-items">
+            <h1>Your Cart</h1>
+            <ul id="cart-items">
+                <!-- Cart items will be added dynamically here -->
+            </ul>
+            <div>Total Quantity:<div class="totalQuantity" id="total-quantity">0</div></div>
+            <p>Total: <br><span id="cart-total">$0</span></p>
+        </div>
+
+        <!-- Checkout Form (Right Side) -->
+        <div class="checkout-form">
+            <div class="nav">
+                <a class="nav-item" href="menu.html">menu</a>
+                ➝
+                <a class="nav-item" href="checkout.html">cart</a>
+                ➝
+                <a class="nav-item" href="payment.html" style="color:gray">purchase</a>
+            </div>
+            <div class="card">
+                <img src="../images/logo.png" alt="" />
+            </div>
+            <div class="form">
+                <div class="form-row">
+                    <input type="text" id="name" placeholder="Full Name"/>
+                </div>
+                <div class="form-row">
+                    <input type="text" id="address" placeholder="Address" />
+                </div>
+                <div class="form-row">
+                    <input type="text" id="email" placeholder="Email" />
+                </div>
+                <div class="form-row">
+                    <input type="text" id="phone" placeholder="Phone Number" />
+                </div>
+            </div>
+
+            <div class="checkoutButton"><a href="payment.html"><button class="buttonCheckout">GO TO PURCHASE</button></a></div>
+        </div>
+    </div>
+
+    <script>
+        // Get a reference to the button and form fields
+        const checkoutButton = document.querySelector(".buttonCheckout");
+        const nameField = document.getElementById("name");
+        const phoneField = document.getElementById("phone");
+        const emailField = document.getElementById("email");
+        const addressField = document.getElementById("address");
+
+    
+        // Add a click event listener to the button
+        checkoutButton.addEventListener("click", function(event) {
+            if (nameField.value === "" || phoneField.value === "" || addressField.value === "" || phoneField.value === "") {
+                // Prevent the form from being submitted
+                event.preventDefault();
+    
+                // Display a popup message
+                alert("Please fill in all the required fields.");
+            }
+        });
+
+        
+    </script>
+ 
+
+</body>
+</html>
